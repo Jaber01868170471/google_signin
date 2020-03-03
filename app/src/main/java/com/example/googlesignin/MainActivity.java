@@ -2,10 +2,12 @@ package com.example.googlesignin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -19,17 +21,17 @@ public class MainActivity extends AppCompatActivity {
 
     GoogleSignInClient mGoogleSignInClient;
 
-    SignInButton signInButton;
+    Button signInButton;
 
     public static final int RC_SIGN_IN =100;
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         signInButton = findViewById(R.id.signinbtn);
-        signInButton.setSize(SignInButton.SIZE_STANDARD);
 
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
